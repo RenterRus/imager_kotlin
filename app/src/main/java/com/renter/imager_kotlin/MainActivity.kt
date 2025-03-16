@@ -6,25 +6,13 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.os.BatteryManager
-import android.os.BatteryManager.BATTERY_PROPERTY_CAPACITY
-import android.os.Build
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
-import android.view.WindowInsets
-import android.view.WindowInsetsController
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
-import androidx.transition.Visibility
 import com.renter.imager_kotlin.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -34,10 +22,7 @@ import kotlinx.coroutines.withContext
 import java.io.ByteArrayOutputStream
 import java.net.URL
 import java.text.SimpleDateFormat
-import java.time.Duration
-import java.util.Calendar
 import java.util.Date
-import kotlin.coroutines.CoroutineContext
 import kotlin.time.DurationUnit
 import kotlin.time.toDuration
 
@@ -55,10 +40,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        getWindow().setFlags(
+     /*   getWindow().setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-
+*/
         next = ActivityMainBinding.inflate(layoutInflater)
         setContentView(next.root)
      
@@ -109,12 +94,12 @@ class MainActivity : AppCompatActivity() {
                         text.visibility = View.VISIBLE
                         text.text = "" + currentDate + " " + batLevel + "%"
                         text.setTextColor(Color.WHITE)
-                        delay(3000)
+                        delay(2000)
 
 
                         image.setImageBitmap(byteArrayToBitmap(white))
                         text.setTextColor(Color.BLACK)
-                        delay(3000)
+                        delay(2000)
 
                         text.setTextColor(Color.WHITE)
                         delay(2000)
@@ -169,12 +154,12 @@ class MainActivity : AppCompatActivity() {
                         text.visibility = View.VISIBLE
                         text.text = "" + currentDate + " " + batLevel + "%"
                         text.setTextColor(Color.WHITE)
-                        delay(3000)
+                        delay(2000)
 
 
                         image.setImageBitmap(byteArrayToBitmap(white))
                         text.setTextColor(Color.BLACK)
-                        delay(3000)
+                        delay(2000)
 
                         text.setTextColor(Color.WHITE)
                         delay(2000)
